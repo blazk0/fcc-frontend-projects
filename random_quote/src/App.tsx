@@ -16,24 +16,24 @@ const App = () => {
 
   const getQuote = async () => {
     try {
-      const res = await fetch(`${apiUrl}`);
-      const { quotes }: Quotes = await res.json();
+      const res = await fetch(apiUrl);
+      const data: Quotes = await res.json();
 
-      setQuotes(quotes);
+      setQuotes(data.quotes);
 
-      getRandomQuote();
+      getRandomQuote(data.quotes);
     } catch (err) {}
   };
 
-  const getRandomQuote = () => {
-    setQuote(quotes[Math.floor(Math.random() * quotes.length)]);
+  const getRandomQuote = (quotesData: Quote[]) => {
+    setQuote(quotesData[Math.floor(Math.random() * quotesData.length)]);
   };
 
   return (
     <div id="quote-box">
       <h2 id="text">
         <i className="fa fa-quote-left"></i>
-        {quote?.quote}
+        {quote ? quote.quote : 'Loading...'}
       </h2>
 
       <p id="author">- {quote?.author}</p>
@@ -53,7 +53,11 @@ const App = () => {
           </a>
         </span>
 
-        <button id="new-quote" onClick={getQuote} className="btn">
+        <button
+          id="new-quote"
+          onClick={() => getRandomQuote(quotes)}
+          className="btn"
+        >
           New Quote
         </button>
       </div>
