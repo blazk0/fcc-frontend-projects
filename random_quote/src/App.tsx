@@ -11,10 +11,10 @@ const App = () => {
   const [quote, setQuote] = useState<Quote>();
 
   useEffect(() => {
-    getQuote();
+    getQuotes();
   }, []);
 
-  const getQuote = async () => {
+  const getQuotes = async () => {
     try {
       const res = await fetch(apiUrl);
       const data: Quotes = await res.json();

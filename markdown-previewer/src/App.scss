@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
+$darkAccent: #224b4b;
+$lightAccent: #2cda9d;
+$backgroundBase: #619e9e;
+
+$shadow: 1px 1px 10px 2px darken($backgroundBase, 20%);
+$default-border: 1px solid darken($backgroundBase, 35%);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $backgroundBase;
+  display: flex;
+  justify-content: center;
+  font-family: 'Russo One', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.toolbar {
+  background-color: $backgroundBase;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-bottom: 1px solid #000;
+  box-shadow: $shadow;
+  margin-top: 10px;
+  border: 1px solid #000;
+}
+
+.toolbar i {
+  margin-right: 10px;
+}
+
+textarea {
+  outline: 0;
+  height: 400px;
+  overflow: scroll;
+  overflow-x: hidden;
+  background-color: lighten($backgroundBase, 30%);
+  border: 1px solid #000;
+  box-shadow: $shadow;
+  border-top: 0px;
+  font-size: 18px;
+  padding: 10px;
+}
+
+#preview {
+  background-color: lighten($backgroundBase, 30%);
+  padding: 10px;
+}
