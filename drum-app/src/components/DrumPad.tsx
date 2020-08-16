@@ -13,7 +13,6 @@ const DrumPad = ({ drum, keyCode, changeText }: Props) => {
   useEffect(() => {
     if (keyCode === drum.keyCode) {
       audio.current?.play();
-
       changeText(drum.id);
     }
   }, [keyCode]);

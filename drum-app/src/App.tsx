@@ -9,13 +9,11 @@ function App() {
 
   useEffect(() => {
     document.addEventListener('keydown', e => setKey(e.keyCode));
-
     document.addEventListener('keyup', () => setKey(0));
 
     return () => {
-      document.removeEventListener('keydown', () => setKey(0));
-
-      document.addEventListener('keyup', () => setKey(0));
+      document.removeEventListener('keydown', () => {});
+      document.addEventListener('keyup', () => {});
     };
   }, []);
 
