@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Russo+One');
 
-$darkAccent: #224b4b;
-$lightAccent: #2cda9d;
 $backgroundBase: #619e9e;
-
 $shadow: 1px 1px 10px 2px darken($backgroundBase, 20%);
-$default-border: 1px solid darken($backgroundBase, 35%);
 
 * {
   box-sizing: border-box;
@@ -29,10 +25,10 @@ body {
   box-shadow: $shadow;
   margin-top: 10px;
   border: 1px solid #000;
-}
 
-.toolbar i {
-  margin-right: 10px;
+  i {
+    margin-right: 10px;
+  }
 }
 
 textarea {
@@ -51,4 +47,7 @@ textarea {
 #preview {
   background-color: lighten($backgroundBase, 30%);
   padding: 10px;
+  border: 1px solid #000;
+  border-top: 0;
+  margin-bottom: 10px;
 }
