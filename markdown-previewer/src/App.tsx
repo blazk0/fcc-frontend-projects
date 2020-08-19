@@ -20,14 +20,14 @@ const App = () => {
         cols={100}
         rows={100}
         spellCheck="false"
-      ></textarea>
+      />
 
       <Toolbar title="Preview" />
 
       <div
         id="preview"
         dangerouslySetInnerHTML={{ __html: marked(markdown, { breaks: true }) }}
-      ></div>
+      />
     </div>
   );
 };
